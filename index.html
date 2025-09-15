@@ -1,52 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Minecraft Status</title>
-  <style>
-    body {
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 30px;
-      color: #00ff88;
-      text-shadow: 0 0 10px #00ff88;
-    }
-    a {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
-      font-size: 1.2em;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(145deg, #2e2e2e, #3a3a3a);
-      border: 2px solid #00ff88;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    a:hover {
-      background: #00ff88;
-      color: black;
-      box-shadow: 0 0 10px #00ff88;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomodachi – Games</title>
+    <link rel="stylesheet" href="style.css"> <!-- // link a tu CSS -->
 </head>
 <body>
-  <div class="container">
-    <h1>Panel de Estado del Servidor</h1>
-    <a href="mode.html">🌍 Modo del Servidor</a>
-    <a href="players.html">👥 Jugadores Online</a>
-  </div>
+
+    <!-- // Sección de bienvenida -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Tomodachi – games</h1>
+            <p>Bienvenido a tomodachi games, el mejor lugar para visualizar sus servidores</p>
+            <a href="#servidores" class="btn">Siguiente →</a>
+            <div class="social">
+                <!-- // enlaces de ejemplo, cámbialos por los tuyos -->
+                <a href="https://instagram.com/" target="_blank">📷</a>
+                <a href="https://wa.me/" target="_blank">💬</a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <!-- // portada del anime -->
+            <img src="img/portada.png" alt="Tomodachi portada">
+        </div>
+    </header>
+
+    <!-- // Sección Minecraft -->
+    <section id="servidores" class="server">
+        <div class="server-img">
+            <img src="img/minecraft.png" alt="Minecraft server">
+        </div>
+        <div class="server-text">
+            <h2>Minecraft server</h2>
+            <p>
+                Servidor de Minecraft Java, Edición HidenCloud. <br>
+                Se incluye: la ip, puerto, lista de jugadores, tipo de server y forma
+                de jugar desde móvil con launcher java.
+            </p>
+            <a href="#info" class="btn">Ver Información de Servidor</a>
+        </div>
+    </section>
+
+    <!-- // Sección de información detallada -->
+    <section id="info" class="info">
+        <div class="info-img">
+            <img src="img/server.png" alt="Servidor Tomodachi">
+        </div>
+        <div class="info-text">
+            <h2>Servidor Tomodachi</h2>
+            <p><strong>IP:</strong> <span id="ip">Nombre del lugar</span> <button onclick="copyText('ip')">Copiar</button></p>
+            <p><strong>Puerto:</strong> <span id="puerto">Número de puerto</span> <button onclick="copyText('puerto')">Copiar</button></p>
+            <p><strong>Jugadores conectados:</strong> 0</p>
+            <p><strong>Server Mode:</strong> Survival</p>
+        </div>
+    </section>
+
+    <script>
+        // // Script para copiar IP y puerto
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text);
+            alert("Copiado: " + text);
+        }
+    </script>
+
 </body>
 </html>
