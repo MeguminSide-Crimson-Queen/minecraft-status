@@ -1,0 +1,79 @@
+/* ==== Reset básico ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ==== Botones reutilizables ==== */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid #00c853;
+    border-radius: 25px;
+    color: #00c853;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #00c853;
+    color: #fff;
+}
+
+/* ==== Hero section ==== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+.hero-text {
+    flex: 1;
+}
+.hero-img img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+.social a {
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* ==== Server section ==== */
+.server {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background: #111;
+    color: #fff;
+}
+.server-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+.server-text {
+    flex: 1;
+}
+
+/* ==== Info section ==== */
+.info {
+    display: flex;
+    padding: 40px;
+    background: #f5f5f5;
+}
+.info-img img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+.info-text p {
+    margin: 10px 0;
+}
