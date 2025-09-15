@@ -1,0 +1,28 @@
+<div id="players-count" style="font-family: monospace; padding:10px; background:#1e1e2f; color:white; border-radius:6px; width:fit-content;">
+  Cargando jugadores...
+</div>
+
+<script>
+  async function checkPlayers() {
+    const ip = "wally.hidencloud.com";
+    const port = "24655";
+    const url = `https://api.mcsrvstat.us/2/${ip}:${port}`;
+
+    try {
+      let response = await fetch(url);
+      let data = await response.json();
+
+      let playersBox = document.getElementById("players-count");
+      if (data.online) {
+        playersBox.innerHTML = `${data.players.online} / ${data.players.max}`;
+      } else {
+        playersBox.innerHTML = "Servidor Offline";
+      }
+    } catch (error) {
+      document.getElementById("players-count").innerHTML = "⚠️ Error";
+    }
+  }
+
+  checkPlayers();
+  setInterval(checkPlayers, 60000);
+</script>
