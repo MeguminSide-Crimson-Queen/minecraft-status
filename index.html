@@ -3,12 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Minecraft Status</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
+    }
+    a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(145deg, #2e2e2e, #3a3a3a);
+      border: 2px solid #00ff88;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    a:hover {
+      background: #00ff88;
+      color: black;
+      box-shadow: 0 0 10px #00ff88;
+    }
+  </style>
 </head>
 <body>
-  <h1>Panel de Estado del Servidor</h1>
-  <ul>
-    <li><a href="mode.html">Modo del Servidor</a></li>
-    <li><a href="players.html">Jugadores Online</a></li>
-  </ul>
+  <div class="container">
+    <h1>Panel de Estado del Servidor</h1>
+    <a href="mode.html">🌍 Modo del Servidor</a>
+    <a href="players.html">👥 Jugadores Online</a>
+  </div>
 </body>
 </html>
