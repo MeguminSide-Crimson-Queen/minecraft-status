@@ -1,0 +1,30 @@
+<div id="server-mode" style="font-family: monospace; padding:10px; background:#1e1e2f; color:white; border-radius:6px; width:fit-content;">
+  Verificando estado...
+</div>
+
+<script>
+  async function checkMode() {
+    const ip = "wally.hidencloud.com";
+    const port = "24655";
+    const url = `https://api.mcsrvstat.us/2/${ip}:${port}`;
+
+    try {
+      let response = await fetch(url);
+      let data = await response.json();
+
+      let modeBox = document.getElementById("server-mode");
+      if (data.online) {
+        modeBox.innerHTML = "🟢 Online";
+        modeBox.style.background = "#144d2c";
+      } else {
+        modeBox.innerHTML = "🔴 Offline";
+        modeBox.style.background = "#4d1414";
+      }
+    } catch (error) {
+      document.getElementById("server-mode").innerHTML = "⚠️ Error";
+    }
+  }
+
+  checkMode();
+  setInterval(checkMode, 60000);
+</script>
